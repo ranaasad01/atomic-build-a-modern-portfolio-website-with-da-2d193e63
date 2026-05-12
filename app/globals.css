@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: #ffffff;
+    --bg-surface: #f4f4f5;
+    --bg-card: #ffffff;
+    --text-primary: #0f0f0f;
+    --text-secondary: #52525b;
+    --text-muted: #71717a;
+    --border: #e4e4e7;
+    --accent: #6366f1;
+    --accent-light: #a5b4fc;
+    --accent-dark: #4f46e5;
+    --shadow: rgba(0, 0, 0, 0.08);
+  }
+
+  .dark {
+    --bg: #0f0f0f;
+    --bg-surface: #1a1a1a;
+    --bg-card: #1e1e1e;
+    --text-primary: #fafafa;
+    --text-secondary: #a1a1aa;
+    --text-muted: #71717a;
+    --border: #27272a;
+    --accent: #6366f1;
+    --accent-light: #a5b4fc;
+    --accent-dark: #4f46e5;
+    --shadow: rgba(0, 0, 0, 0.4);
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text-primary);
+    font-family: var(--font-geist-sans), Inter, system-ui, sans-serif;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #6366f1;
+    color: #ffffff;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--bg-surface);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-dark);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-delay-100 { animation-delay: 100ms; }
+  .animate-delay-200 { animation-delay: 200ms; }
+  .animate-delay-300 { animation-delay: 300ms; }
+  .animate-delay-400 { animation-delay: 400ms; }
+  .animate-delay-500 { animation-delay: 500ms; }
+  .animate-delay-600 { animation-delay: 600ms; }
+
+  .bg-grid-pattern {
+    background-image: radial-gradient(circle, rgba(99, 102, 241, 0.15) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .dark .bg-grid-pattern {
+    background-image: radial-gradient(circle, rgba(99, 102, 241, 0.12) 1px, transparent 1px);
+  }
+}
